@@ -6,7 +6,6 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set number")
 vim.cmd("set relativenumber")
 
--- This disables those lines you see after the end of a buffer.
 vim.opt.fillchars = { eob = " " }
 
 vim.g.mapleader = " "
@@ -145,8 +144,8 @@ vim.keymap.set("n", "<leader>M", ":Mason<CR>", { ... })
 require("mason-lspconfig").setup({
   ensure_installed = { "lua_ls", "pylsp" }
   -- I don't install clangd because it throws some really bollocky errors that I can't be bothered to deal with.
-  -- For the time being, learn to program C++ without lsp. After you're comfortable with the language go
-  -- install an LSP. (clangd might be annoying because you'll need clang so you'll need to install some extra crap.)
+  -- For the time being, I'm going to learn to program C++ without lsp. After I'm comfortable with the language I'll go
+  -- install an LSP.
   -- I'd swear for comedic value, but I'm so annoyed I'm conveying my distaste for clangd in the form of
   -- elongated prose.
   -- A viable solution to this would be to use a build system like cmake to generate a commands data base for
