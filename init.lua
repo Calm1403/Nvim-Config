@@ -180,16 +180,16 @@ cmp.setup({
   })
 })
 
-local _border = "rounded"
+local border = "rounded"
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   vim.lsp.handlers.hover,
-  { border = _border }
+  { border = border }
 )
 
 -- This adds borders to diagnostics.
 vim.diagnostic.config {
-  float = { border = _border }
+  float = { border = border }
 }
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
