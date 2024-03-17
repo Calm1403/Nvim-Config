@@ -6,6 +6,9 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set number")
 vim.cmd("set relativenumber")
 
+vim.keymap.set("n", "<C-Up>", "ddkP", {...})
+vim.keymap.set("n", "<C-Down>", "ddp", {...})
+
 vim.opt.fillchars = { eob = " " }
 
 vim.g.mapleader = " "
