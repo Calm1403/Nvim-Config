@@ -91,6 +91,8 @@ vim.keymap.set("n", "<leader>L", ":Lazy<CR>", { ... })
 
 require("alpha").setup(require("alpha.themes.dashboard").config)
 
+vim.keymap.set("n", "<leader>tt", ":ToggleTerm direction=float<CR>", { ... })
+
 vim.cmd("colorscheme nord")
 require("lualine").setup({
   options = {
