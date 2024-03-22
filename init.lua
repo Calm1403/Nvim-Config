@@ -53,12 +53,6 @@ local plugins = {
     }
   },
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim"
-    }
-  },
-  {
     "akinsho/toggleterm.nvim",
     version = "*",
     config = true
@@ -125,34 +119,11 @@ configs.setup({
   indent = { enable = true }
 })
 
-local neotree = require("neo-tree")
-neotree.setup({
-  popup_border_style = "rounded",
-  filesystem = {
-    filtered_items = {
-      visible = true,
-      hide_dotfiles = false,
-      hide_gitignored = true,
-    }
-  }
-})
-
-vim.keymap.set("n", "<leader>T", ":Neotree reveal filesystem toggle float<CR>", { ... })
-vim.keymap.set("n", "<leader>tt", ":ToggleTerm direction=float<CR>", { ... })
-
 require("mason").setup(...)
 vim.keymap.set("n", "<leader>M", ":Mason<CR>", { ... })
 
 require("mason-lspconfig").setup({
   ensure_installed = { "lua_ls", "pylsp" }
-  -- I don't install clangd because it throws some really bollocky errors that I can't be bothered to deal with.
-  -- For the time being, I'm going to learn to program C++ without lsp. After I'm comfortable with the language I'll go
-  -- install an LSP.
-  -- I'd swear for comedic value, but I'm so annoyed I'm conveying my distaste for clangd in the form of
-  -- elongated prose.
-  -- A viable solution to this would be to use a build system like cmake to generate a commands data base for
-  -- clangd to read, allowing it to decifer the location of header files; I've tried to do this but no matter
-  -- what I do clangd doesn't budge.
 })
 
 local cmp = require("cmp")
