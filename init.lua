@@ -169,6 +169,9 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lspconfig = require("lspconfig")
 
+require("lspconfig.ui.windows").default_options.border = "rounded"
+vim.cmd("hi LspInfoBorder guifg=lightgrey")
+
 vim.keymap.set("n", "<leader>li", ":LspInfo<CR>")
 vim.keymap.set("n", "<leader>D", vim.lsp.buf.definition, { ... })
 vim.keymap.set("n", "<leader>C", vim.lsp.buf.hover, { ... })
