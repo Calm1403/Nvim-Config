@@ -7,8 +7,6 @@ vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.cmd("set cursorline")
 
-
-
 vim.keymap.set("n", "<C-Up>", "ddkP", { ... })
 vim.keymap.set("n", "<C-Down>", "ddp", { ... })
 vim.opt.fillchars = { eob = " " }
