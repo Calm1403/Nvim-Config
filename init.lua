@@ -112,6 +112,7 @@ telescope.setup({
     }
   }
 })
+
 telescope.load_extension("ui-select")
 
 local configs = require("nvim-treesitter.configs")
