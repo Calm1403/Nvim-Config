@@ -121,7 +121,16 @@ configs.setup({
   indent = { enable = true }
 })
 
-require("mason").setup(...)
+require("mason").setup({
+  ui = {
+    icons = {
+      package_installed = "✓",
+      package_uninstalled = "✗",
+      package_pending = "➜"
+    },
+    border = "rounded"
+  }
+})
 vim.keymap.set("n", "<leader>M", ":Mason<CR>", { ... })
 
 require("mason-lspconfig").setup({
