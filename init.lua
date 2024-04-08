@@ -24,6 +24,7 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 
+
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
@@ -121,6 +122,8 @@ configs.setup({
   highlight = { enable = true },
   indent = { enable = true }
 })
+
+vim.cmd("hi CursorLine guibg=NONE guifg=NONE") -- This is here because treesitter was having a massive giggle with the bloody highlight groups.
 
 require("mason").setup({
   ui = {
