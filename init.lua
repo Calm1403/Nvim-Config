@@ -54,11 +54,6 @@ local plugins = {
     }
   },
   {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    config = true
-  },
-  {
     "williamboman/mason.nvim",
     {
       "williamboman/mason-lspconfig.nvim",
@@ -91,8 +86,6 @@ require("lazy").setup(plugins, opts)
 vim.keymap.set("n", "<leader>L", ":Lazy<CR>", { ... })
 
 require("alpha").setup(require("alpha.themes.dashboard").config)
-
-vim.keymap.set("n", "<leader>tt", ":ToggleTerm direction=float<CR>", { ... })
 
 vim.cmd("colorscheme nord")
 require("lualine").setup({
