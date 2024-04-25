@@ -112,7 +112,7 @@ telescope.load_extension("ui-select")
 
 local configs = require("nvim-treesitter.configs")
 configs.setup({
-  ensure_installed = { "lua", "cpp", "vimdoc", "python", "markdown" },
+  ensure_installed = { "lua", "cpp", "vimdoc", "python", "markdown", "make" },
   highlight = { enable = true },
   indent = { enable = true }
 })
