@@ -169,7 +169,6 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   { border = border }
 )
 
--- This adds borders to diagnostics.
 vim.diagnostic.config {
   float = { border = border }
 }
