@@ -84,7 +84,7 @@ local opts = { ... }
 require("lazy").setup(plugins, opts)
 vim.keymap.set("n", "<leader>L", ":Lazy<CR>", { ... })
 
-require("alpha").setup(require("alpha.themes.dashboard").config)
+require("alpha").setup(require("alpha.themes.theta").config)
 
 vim.cmd("colorscheme nord")
 require("lualine").setup({
