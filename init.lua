@@ -24,7 +24,6 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 
-
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
@@ -121,6 +120,8 @@ configs.setup({
 
 vim.cmd("hi CursorLine guibg=NONE guifg=NONE") -- This is here because treesitter was having a massive giggle with the bloody highlight groups.
 
+local border = "rounded"
+
 require("mason").setup({
   ui = {
     icons = {
@@ -128,7 +129,7 @@ require("mason").setup({
       package_uninstalled = "✗",
       package_pending = "➜"
     },
-    border = "rounded"
+    border = border
   }
 })
 vim.keymap.set("n", "<leader>M", ":Mason<CR>", { ... })
@@ -163,7 +164,6 @@ cmp.setup({
   })
 })
 
-local border = "rounded"
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   vim.lsp.handlers.hover,
@@ -182,6 +182,7 @@ require("lspconfig.ui.windows").default_options.border = border
 vim.cmd("hi LspInfoBorder guifg=lightgrey")
 
 vim.keymap.set("n", "<leader>li", ":LspInfo<CR>")
+vim.keymap.set("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", { ... })
 vim.keymap.set("n", "<leader>D", vim.lsp.buf.definition, { ... })
 vim.keymap.set("n", "<leader>C", vim.lsp.buf.hover, { ... })
 vim.keymap.set("n", "<leader>A", vim.lsp.buf.code_action, { ... })
