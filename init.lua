@@ -99,7 +99,7 @@ dashboard.section.header.val = {
 dashboard.section.buttons.val = {
   dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
   dashboard.button("ff", "󰈞  Find file", ""),
-  dashboard.button("fg", "󰈬 Find word", ""),
+  dashboard.button("fg", "󰈬  Find word", ""),
   dashboard.button("fh", "󰊄  Recently opened files", ""),
   dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>")
 }
