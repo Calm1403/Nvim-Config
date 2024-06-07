@@ -84,7 +84,18 @@ local opts = { ... }
 require("lazy").setup(plugins, opts)
 vim.keymap.set("n", "<leader>L", ":Lazy<CR>", { ... })
 
-require("alpha").setup(require("alpha.themes.theta").config)
+local dashboard = require("alpha.themes.dashboard")
+
+dashboard.section.header.val = {
+  [[███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗]],
+  [[████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║]],
+  [[██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║]],
+  [[██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║]],
+  [[██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║]],
+  [[╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]],
+}
+
+require("alpha").setup(dashboard.config)
 
 vim.cmd("colorscheme nord")
 require("lualine").setup({
