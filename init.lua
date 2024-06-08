@@ -64,6 +64,11 @@ local plugins = {
     "neovim/nvim-lspconfig"
   },
   {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = true
+  },
+  {
     "hrsh7th/cmp-nvim-lsp",
     {
       "L3MON4D3/LuaSnip",
@@ -111,6 +116,8 @@ require("lualine").setup({
     theme = "nord"
   }
 })
+
+vim.keymap.set("n", "<leader>tt", ":ToggleTerm direction=float<CR>", { ... })
 
 local builtin = require("telescope.builtin")
 
