@@ -133,22 +133,6 @@ telescope.setup({
       require("telescope.themes").get_dropdown()
     }
   },
-  pickers = {
-    find_files = {
-      hidden = true
-    }
-  },
-  defaults = {
-    vimgrep_arguments = {
-      'rg',
-      '--hidden',
-      '--no-heading',
-      '--with-filename',
-      '--line-number',
-      '--column',
-      '--smart-case',
-    }
-  }
 })
 
 telescope.load_extension("ui-select")
