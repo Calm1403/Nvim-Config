@@ -208,7 +208,7 @@ require("lspconfig.ui.windows").default_options.border = border
 vim.cmd("hi LspInfoBorder guifg=lightgrey")
 
 vim.keymap.set("n", "<leader>li", ":LspInfo<CR>")
-vim.keymap.set("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", { ... })
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { ... })
 vim.keymap.set("n", "<leader>D", vim.lsp.buf.definition, { ... })
 vim.keymap.set("n", "<leader>C", vim.lsp.buf.hover, { ... })
 vim.keymap.set("n", "<leader>A", vim.lsp.buf.code_action, { ... })
