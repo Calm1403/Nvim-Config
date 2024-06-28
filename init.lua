@@ -224,7 +224,7 @@ lspconfig.pylsp.setup({
       plugins = {
         pycodestyle = {
           ignore = { "E501" } -- Fuck Off.
-        },
+        }
       }
     }
   },
