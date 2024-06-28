@@ -223,7 +223,11 @@ lspconfig.pylsp.setup({
     pylsp = {
       plugins = {
         pycodestyle = {
-          ignore = { "E501" } -- Fuck off.
+          enabled = false
+        },
+        pylint = {
+          enabled = true,
+          executable = "pylint"
         }
       }
     }
