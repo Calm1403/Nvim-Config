@@ -54,14 +54,12 @@ local plugins = {
   },
   {
     "williamboman/mason.nvim",
-    {
-      "williamboman/mason-lspconfig.nvim",
-      lazy = false,
-      opts = {
-        auto_install = true
-      }
-    },
+  },
+  {
     "neovim/nvim-lspconfig"
+  },
+  {
+    "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   {
     "akinsho/toggleterm.nvim",
@@ -160,10 +158,6 @@ require("mason").setup({
 })
 vim.keymap.set("n", "<leader>M", ":Mason<CR>", { ... })
 
-require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "pylsp" }
-})
-
 local cmp = require("cmp")
 require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup({
@@ -190,7 +184,6 @@ cmp.setup({
   })
 })
 
-
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   vim.lsp.handlers.hover,
   { border = border }
@@ -214,6 +207,19 @@ vim.keymap.set("n", "<leader>C", vim.lsp.buf.hover, { ... })
 vim.keymap.set("n", "<leader>A", vim.lsp.buf.code_action, { ... })
 vim.keymap.set("n", "<leader>F", vim.lsp.buf.format, { ... })
 
+local null_ls = require("null-ls")
+
+null_ls.setup({
+  sources = {
+    null_ls.builtins.diagnostics.mypy.with({
+      extra_args = function()
+        local virtual = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX") or "/usr"
+        return { "--python-executable", virtual .. "/bin/python3" }
+      end
+    })
+  }
+})
+
 lspconfig.lua_ls.setup({
   capabilities = capabilities
 })
@@ -224,7 +230,7 @@ lspconfig.pylsp.setup({
       plugins = {
         pycodestyle = {
           ignore = { "E501" } -- Fuck Off.
-        }
+        },
       }
     }
   },
