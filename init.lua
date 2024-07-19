@@ -147,7 +147,6 @@ vim.cmd("hi CursorLine guibg=NONE guifg=NONE") -- This is here because treesitte
 local border = "rounded"
 
 require("mason").setup({
-  log_level = vim.log.levels.DEBUG,
   ui = {
     icons = {
       package_installed = "✓",
