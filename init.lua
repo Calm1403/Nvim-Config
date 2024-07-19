@@ -237,7 +237,3 @@ lspconfig.pylsp.setup({
   },
   capabilities = capabilities
 })
-
-lspconfig.clangd.setup({
-  capabilities = capabilities
-})
